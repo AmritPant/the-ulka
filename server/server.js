@@ -5,7 +5,7 @@ dotenv.config({ path: path.join(__dirname, 'config', 'config.env') });
 
 //  Hadling unCaught Exception
 process.on('uncaughtException', err => {
-  console.log(`Error:  ${err.message}`);
+  console.log(`Error:  ${err.message}`, err);
   console.error('Shutting down the server due to Uncaught Exception ');
   process.exit(1);
 });
