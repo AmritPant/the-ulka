@@ -1,5 +1,8 @@
-const handleErrorDev = (err, res) =>
-  res.status(err.statusCode).json({ success: false, error: err });
+const handleErrorDev = (err, res) => {
+  res
+    .status(err.statusCode)
+    .json({ success: false, message: err.message, stack: err.stack });
+};
 
 const handleErrorProd = (err, res) => {
   if (err.isOperational) {
